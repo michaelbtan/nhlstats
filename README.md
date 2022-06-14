@@ -1,2 +1,2 @@
 # nhlstats
-An app that queries NHL team and player statistics
+An app that queries NHL team statistics
