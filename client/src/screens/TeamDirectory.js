@@ -7,6 +7,7 @@ export default function TeamDirectory() {
   //Holds the array of team objects
   const [teams, setTeams] = useState([]);
 
+  //Calls the api-endpoint when the app loads
   useEffect(() => {
     const getTeams = async () => {
       const teams = await getTeamsData();
