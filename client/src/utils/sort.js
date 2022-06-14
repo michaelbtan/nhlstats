@@ -1,9 +1,9 @@
 export const sortAZ = (arr) =>
   arr.sort((a, b) => {
-    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+    if (a.franchise.teamName.toLowerCase() < b.franchise.teamName.toLowerCase()) {
       return -1;
     }
-    if (a.title.toLowerCase() > b.title.toLowerCase()) {
+    if (a.franchise.teamName.toLowerCase() > b.franchise.teamName.toLowerCase()) {
       return 1;
     }
     return 0;
@@ -12,10 +12,10 @@ export const sortAZ = (arr) =>
 export const sortZA = (arr) =>
   arr
     .sort((a, b) => {
-      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+      if (a.franchise.teamName.toLowerCase() < b.franchise.teamName.toLowerCase()) {
         return -1;
       }
-      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+      if (a.franchise.teamName.toLowerCase() > b.franchise.teamName.toLowerCase()) {
         return 1;
       }
       return 0;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamCard from '../components/TeamCard';
 import { getTeamsData } from '../services/apiConfig';
+import { SortDropdown } from '../components/SortDropdown'
 
 export default function TeamDirectory() {
 
@@ -19,6 +20,13 @@ export default function TeamDirectory() {
 
   return (
     <div>
+      <h2>Welcome to the NHL Team Data App</h2>
+      <h4>Some additonal features include:</h4>
+      <ul>
+        <li>Sort teams from A-Z or Z-A</li>
+        <li>Filter teams by both division or conference</li>
+      </ul>
+      <SortDropdown team={teams} />
       {
         teams.map((team) => (
           <TeamCard team={team} />
