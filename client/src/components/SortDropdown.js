@@ -1,4 +1,3 @@
-
 export const SortDropdown = (props) => {
   
   const handleSort = (e) => {
@@ -7,7 +6,7 @@ export const SortDropdown = (props) => {
 
   return (
     <form onSubmit={props.handleSubmit}>
-      <select className="displayedProducts_sort" onChange={(e) => handleSort(e)}>
+      <select onChange={(e) => handleSort(e)}>
         <option selected disabled>
           Sort By:
         </option>

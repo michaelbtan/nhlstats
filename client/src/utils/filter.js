@@ -1,4 +1,7 @@
-export const filter = (arr) =>
-  arr.filter((teams) => {
-    if(teams.conference.name === "Eastern") 
-  })
+export const filterEasternConf = (arr) => {
+    return arr.filter(team => team.conference.name.toLowerCase() === 'eastern');
+}
+
+export const filterWesternConf = (arr) => {
+  return arr.filter(team => team.conference.name.toLowerCase() === 'western');
+}

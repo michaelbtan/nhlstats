@@ -10,8 +10,7 @@ export const sortAZ = (arr) =>
   });
 
 export const sortZA = (arr) =>
-  arr
-    .sort((a, b) => {
+  arr.sort((a, b) => {
       if (a.franchise.teamName.toLowerCase() < b.franchise.teamName.toLowerCase()) {
         return -1;
       }

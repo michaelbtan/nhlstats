@@ -3,12 +3,16 @@ import TeamCard from '../components/TeamCard';
 import { getTeamsData } from '../services/apiConfig';
 import { SortDropdown } from '../components/SortDropdown';
 import { sortAZ, sortZA } from '../utils/sort';
+import { FilterConference } from '../components/FilterConference';
+import { filterEasternConf, filterWesternConf } from '../utils/filter';
 
 export default function TeamDirectory() {
 
   //Holds the array of team objects
   const [teams, setTeams] = useState([]);
   const [applySort, setApplySort] = useState(true);
+  const [applyFilter, setApplyFilter] = useState(true);
+
 
   //applies to the sorting dropdown
   const handleSort = (e) => {
@@ -22,6 +26,19 @@ export default function TeamDirectory() {
     }
   };
 
+    //applies to the sorting dropdown
+  const handleConfFilter = (e) => {
+    if (e === "Select") {
+      setTeams(teams);
+    }
+    if (e === "Eastern-Conference") {
+      setTeams(filterEasternConf(teams));
+    }
+    if (e === "Western-Conference") {
+      setTeams(filterWesternConf(teams));
+    }
+  };
+
   //prevent refresh on submit
   const handleSubmit = (e) => e.preventDefault();
 
@@ -30,6 +47,7 @@ export default function TeamDirectory() {
     const getTeams = async () => {
       const teams = await getTeamsData();
       setTeams(teams);
+      console.log(teams)
     }
     getTeams();
   }, [])
@@ -42,7 +60,8 @@ export default function TeamDirectory() {
         <li>Sort teams from A-Z or Z-A</li>
         <li>Filter teams by both division or conference</li>
       </ul>
-      <SortDropdown onSubmit={handleSubmit} handleSort={handleSort}  />
+      <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
+      <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
       { teams ?
         teams.map((team, id) => (
           <TeamCard team={team} id={id}/>
