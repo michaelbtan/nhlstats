@@ -13,7 +13,7 @@ export default function TeamInfo() {
     const getTeamData = async () => {
       const team = await getTeamStats(id);
       setTeam(team);
-      console.log('dddd', team)
+      console.log('Team Data+++', team)
     }
     getTeamData();
   }, [id]);

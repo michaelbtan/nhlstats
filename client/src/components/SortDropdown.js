@@ -1,5 +1,6 @@
 
 export const SortDropdown = (props) => {
+  
   const handleSort = (e) => {
     props.handleSort(e.target.value);
   };
