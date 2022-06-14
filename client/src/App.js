@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import TeamDirectory from './screens/TeamDirectory';
-import TeamInfo from './screens/TeamInfo';
+import TeamStats from './screens/TeamStats';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<TeamDirectory />} />
-        <Route path='/:id' element={<TeamInfo />} />
+        <Route path='/:id' element={<TeamStats />} />
       </Routes>
     </div>
   );

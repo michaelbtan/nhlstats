@@ -27,10 +27,11 @@ export default function TeamDirectory() {
         <li>Filter teams by both division or conference</li>
       </ul>
       <SortDropdown team={teams} />
-      {
-        teams.map((team) => (
-          <TeamCard team={team} />
+      { teams ?
+        teams.map((team, id) => (
+          <TeamCard team={team} id={id}/>
         ))
+        : null
       }
     </div>
   )
