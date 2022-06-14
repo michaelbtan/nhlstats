@@ -4,7 +4,8 @@ import { getTeamsData } from '../services/apiConfig';
 import { SortDropdown } from '../components/SortDropdown';
 import { sortAZ, sortZA } from '../utils/sort';
 import { FilterConference } from '../components/FilterConference';
-import { filterEasternConf, filterWesternConf } from '../utils/filter';
+import { FilterDivision } from '../components/FilterDivision';
+import { filterEasternConf, filterWesternConf, filterMetroDiv, filterAtlDiv, filterPacDiv, filterCenDiv } from '../utils/filter';
 
 export default function TeamDirectory() {
 
@@ -26,7 +27,7 @@ export default function TeamDirectory() {
     }
   };
 
-    //applies to the sorting dropdown
+  //applies to the conference filter dropdown
   const handleConfFilter = (e) => {
     if (e === "Select") {
       setTeams(teams);
@@ -38,6 +39,25 @@ export default function TeamDirectory() {
       setTeams(filterWesternConf(teams));
     }
   };
+
+    //applies to the division filter dropdown
+    const handleDivFilter = (e) => {
+      if (e === "Select") {
+        setTeams(teams);
+      }
+      if (e === "Metro-Division") {
+        setTeams(filterMetroDiv(teams));
+      }
+      if (e === "Atlantic-Division") {
+        setTeams(filterAtlDiv(teams));
+      }
+      if (e === "Central-Division") {
+        setTeams(filterPacDiv(teams));
+      }
+      if (e === "Pacific-Division") {
+        setTeams(filterCenDiv(teams));
+      }
+    };
 
   //prevent refresh on submit
   const handleSubmit = (e) => e.preventDefault();
@@ -61,6 +81,7 @@ export default function TeamDirectory() {
         <li>Filter teams by both division or conference</li>
       </ul>
       <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
+      <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
       <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
       { teams ?
         teams.map((team, id) => (
