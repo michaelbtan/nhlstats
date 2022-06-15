@@ -71,9 +71,13 @@ export default function TeamInfo() {
           </thead>
           <tbody>          
             <tr>
+              {/* red cell if the team is below average, yellow if averge, green if above average */}
               {
               Object.values(rank).map((key, id) => (
-                <td key={id} className={parseInt(key.slice(0, -2)) >= 16 ? "below" : "above"}
+                <td key={id}
+                  className={parseInt(key.slice(0, -2)) <= 10 ? "aboveAvg" :
+                    parseInt(key.slice(0, -2)) <= 22 ? "average" :   "belowAvg"
+                }
                 >{key}</td>))
               }
             </tr>

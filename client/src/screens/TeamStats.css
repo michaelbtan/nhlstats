@@ -20,10 +20,14 @@ th  {
   overflow-x: scroll;
 }
 
-.above  {
+.aboveAvg  {
   background-color: green;
 }
 
-.below  {
+.belowAvg  {
   background-color: red;
+}
+
+.average  {
+  background-color: yellow;
 }
