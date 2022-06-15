@@ -38,8 +38,8 @@ export default function TeamDirectory() {
       setApplySort(!applySort);
   };
 
-  //applies to the conference filter dropdown
-  const handleConfFilter = (e) => {
+  //applies to the conference and division filter dropdown
+  const handleFilter = (e) => {
     if (e === "Select") {
       setFilterTeams();
     }
@@ -49,26 +49,19 @@ export default function TeamDirectory() {
     if (e === "Western-Conference") {
       setFilterTeams(filterWesternConf(teams));
     }
+    if (e === "Metro-Division") {
+      setFilterTeams(filterMetroDiv(teams));
+    }
+    if (e === "Atlantic-Division") {
+      setFilterTeams(filterAtlDiv(teams));
+    }
+    if (e === "Central-Division") {
+      setFilterTeams(filterPacDiv(teams));
+    }
+    if (e === "Pacific-Division") {
+      setFilterTeams(filterCenDiv(teams));
+    }
   };
-
-    //applies to the division filter dropdown
-    const handleDivFilter = (e) => {
-      if (e === "Select") {
-        setFilterTeams();
-      }
-      if (e === "Metro-Division") {
-        setFilterTeams(filterMetroDiv(teams));
-      }
-      if (e === "Atlantic-Division") {
-        setFilterTeams(filterAtlDiv(teams));
-      }
-      if (e === "Central-Division") {
-        setFilterTeams(filterPacDiv(teams));
-      }
-      if (e === "Pacific-Division") {
-        setFilterTeams(filterCenDiv(teams));
-      }
-    };
 
   //prevent refresh on submit
   const handleSubmit = (e) => e.preventDefault();
@@ -88,8 +81,8 @@ export default function TeamDirectory() {
       <h2>Welcome to the NHL Team Data App!</h2>
       <div className="filters">
       <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
-      <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
-      <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
+      <FilterConference handleFilter={handleFilter} handleSubmit={handleSubmit} />
+      <FilterDivision handleFilter={handleFilter} handleSubmit={handleSubmit} />
       {/* sorts alphabetically the filterTeams state if it is not empty */}
       {filterTeams ?
         <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />

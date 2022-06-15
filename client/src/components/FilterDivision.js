@@ -1,12 +1,12 @@
 export const FilterDivision = (props) => {
   
-  const handleDivFilter = (e) => {
-    props.handleDivFilter(e.target.value);
+  const handleFilter = (e) => {
+    props.handleFilter(e.target.value);
   };
 
   return (
     <form onSubmit={props.handleSubmit}>
-      <select onChange={(e) => handleDivFilter(e)}>
+      <select onChange={(e) => handleFilter(e)}>
         <option value="Select">Select Division</option>
         <option value="Metro-Division">Metro Division</option>
         <option value="Atlantic-Division">Atlantic Division</option>
