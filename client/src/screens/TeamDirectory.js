@@ -27,6 +27,18 @@ export default function TeamDirectory() {
     }
   };
 
+    //applies to the sorting dropdown
+    const handleFilteredSort = (e) => {
+      if (e === "alpha-ascending") {
+        setFilterTeams(sortAZ(filterTeams));
+        setApplySort(!applySort);
+      }
+      if (e === "alpha-descending") {
+        setFilterTeams(sortZA(filterTeams));
+        setApplySort(!applySort);
+      }
+    };
+
   //applies to the conference filter dropdown
   const handleConfFilter = (e) => {
     if (e === "Select") {
@@ -82,7 +94,10 @@ export default function TeamDirectory() {
       </ul>
       <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
       <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
-      <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
+      {filterTeams ?
+        <SortDropdown handleSort={handleFilteredSort} handleSubmit={handleSubmit} />
+        : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
+      }
       {filterTeams ? 
         filterTeams.map((team, id) => (
           <TeamCard team={team} id={id}/>
