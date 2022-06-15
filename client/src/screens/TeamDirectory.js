@@ -12,7 +12,7 @@ export default function TeamDirectory() {
   //Holds the array of team objects
   const [teams, setTeams] = useState([]);
   const [applySort, setApplySort] = useState(true);
-  const [applyFilter, setApplyFilter] = useState(true);
+  const [filterTeams, setFilterTeams] = useState();
 
 
   //applies to the sorting dropdown
@@ -30,32 +30,32 @@ export default function TeamDirectory() {
   //applies to the conference filter dropdown
   const handleConfFilter = (e) => {
     if (e === "Select") {
-      setTeams(teams);
+      setFilterTeams();
     }
     if (e === "Eastern-Conference") {
-      setTeams(filterEasternConf(teams));
+      setFilterTeams(filterEasternConf(teams));
     }
     if (e === "Western-Conference") {
-      setTeams(filterWesternConf(teams));
+      setFilterTeams(filterWesternConf(teams));
     }
   };
 
     //applies to the division filter dropdown
     const handleDivFilter = (e) => {
       if (e === "Select") {
-        setTeams(teams);
+        setFilterTeams();
       }
       if (e === "Metro-Division") {
-        setTeams(filterMetroDiv(teams));
+        setFilterTeams(filterMetroDiv(teams));
       }
       if (e === "Atlantic-Division") {
-        setTeams(filterAtlDiv(teams));
+        setFilterTeams(filterAtlDiv(teams));
       }
       if (e === "Central-Division") {
-        setTeams(filterPacDiv(teams));
+        setFilterTeams(filterPacDiv(teams));
       }
       if (e === "Pacific-Division") {
-        setTeams(filterCenDiv(teams));
+        setFilterTeams(filterCenDiv(teams));
       }
     };
 
@@ -83,11 +83,13 @@ export default function TeamDirectory() {
       <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
       <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
       <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
-      { teams ?
-        teams.map((team, id) => (
+      {filterTeams ? 
+        filterTeams.map((team, id) => (
           <TeamCard team={team} id={id}/>
         ))
-        : null
+        : teams.map((team, id) => (
+          <TeamCard team={team} id={id}/>
+        ))
       }
     </div>
   )
