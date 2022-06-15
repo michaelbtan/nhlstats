@@ -26,27 +26,17 @@ export default function TeamDirectory() {
 
   //applies to the sorting dropdown
   const handleSort = (e) => {
-    if (e === "alpha-ascending") {
-      setTeams(sortAZ(teams));
+    if (e === "Alpha-Ascending" && filterTeams) {
+      setFilterTeams(sortAZ(filterTeams));
       setApplySort(!applySort);
-    }
-    if (e === "alpha-descending") {
-      setTeams(sortZA(teams));
+    } setTeams(sortAZ(teams));
       setApplySort(!applySort);
-    }
+    if (e === "Alpha-Descending" && filterTeams) {
+      setFilterTeams(sortZA(filterTeams));
+      setApplySort(!applySort);
+    } setTeams(sortZA(teams));
+      setApplySort(!applySort);
   };
-
-    //applies to the sorting dropdown for filtered teams
-    const handleFilteredSort = (e) => {
-      if (e === "Alpha-Ascending") {
-        setFilterTeams(sortAZ(filterTeams));
-        setApplySort(!applySort);
-      }
-      if (e === "Alpha-Descending") {
-        setFilterTeams(sortZA(filterTeams));
-        setApplySort(!applySort);
-      }
-    };
 
   //applies to the conference filter dropdown
   const handleConfFilter = (e) => {
@@ -102,7 +92,7 @@ export default function TeamDirectory() {
       <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
       {/* sorts alphabetically the filterTeams state if it is not empty */}
       {filterTeams ?
-        <SortDropdown handleSort={handleFilteredSort} handleSubmit={handleSubmit} />
+        <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
         : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
         }
       </div>
