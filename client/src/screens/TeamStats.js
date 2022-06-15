@@ -6,13 +6,13 @@ import { getTeamStats } from '../services/apiConfig';
 
 export default function TeamInfo() {
 
-  const [team, setTeam] = useState({});
+  const [teamStats, setTeamStats] = useState({});
   const { id } = useParams(); //id of the team that is selected
 
   useEffect(() => {
     const getTeamData = async () => {
       const team = await getTeamStats(id);
-      setTeam(team);
+      setTeamStats(team);
       console.log('Team Data+++', team)
     }
     getTeamData();
@@ -20,6 +20,8 @@ export default function TeamInfo() {
 
   return (
     <div>
+      <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
+      <h2>{teamStats.name}</h2>
       <BackBtn />
     </div>
   )
