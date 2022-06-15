@@ -3,7 +3,7 @@ import './TeamStats.css';
 import { BackBtn } from '../components/BackBtn';
 import { useParams } from 'react-router-dom';
 import { getTeamStats } from '../services/apiConfig';
-// import mockData from '../utils/mockData'; 
+// import mockData from '../services/mockData'; 
 
 
 export default function TeamInfo() {
@@ -45,6 +45,7 @@ export default function TeamInfo() {
         <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
         <h2>{teamStats?.[0].splits?.[0].team.name}</h2>
         <h3>2021-2022 Stats</h3>
+        {/* color coded bar for rankings */}
           <h4><span id="rankSpan" className="aboveAvg">Top 10</span>
             <span id="rankSpan" className="average">Middle</span>
             <span id="rankSpan" className="belowAvg">Bottom 10</span>
@@ -55,27 +56,30 @@ export default function TeamInfo() {
         <table>
           <thead>
             <tr>
+              {/* stats header*/}
               {Object.keys(stats).map((key, id) => (
                   <th key={id}>{key}</th>))}
             </tr>
           </thead>
           <tbody>          
             <tr>
+              {/* stats */}
               {Object.values(stats).map((value, id ) => (
-                  <td key={id}>{value}</td>))}
+                <td key={id}>{value}</td>))}
             </tr>
           </tbody>
         </table>
         <table>
           <thead>
             <tr>
+              {/* ranking header*/}
               {Object.keys(rank).map((key, id) => (
                   <th key={id}>{key}</th>))}
             </tr>
           </thead>
           <tbody>          
             <tr>
-              {/* red cell if the team is below average, yellow if averge, green if above average */}
+              {/* ranking statistics - red cell if the team is below average, yellow if averge, green if above average */}
               {
               Object.values(rank).map((key, id) => (
                 <td key={id}

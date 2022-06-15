@@ -80,17 +80,19 @@ export default function TeamDirectory() {
     <div>
       <h1>Welcome to the NHL Team Data App!</h1>
       <div className="filters">
-      <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
-      <FilterConference handleFilter={handleFilter} handleSubmit={handleSubmit} />
-      <FilterDivision handleFilter={handleFilter} handleSubmit={handleSubmit} />
-      {/* sorts alphabetically the filterTeams state if it is not empty */}
-      {filterTeams ?
-        <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
-        : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
-        }
+        {/* search bar */}        
+        <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
+        {/* division and conference dropdown filters */}
+        <FilterConference handleFilter={handleFilter} handleSubmit={handleSubmit} />
+        <FilterDivision handleFilter={handleFilter} handleSubmit={handleSubmit} />
+        {/* sorts alphabetically the filterTeams state if it is not empty */}
+        {filterTeams ?
+          <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
+          : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
+          }
       </div>
       <div className="teamListings">
-      {/* renders teams from the filterTeams state if it is not empy */}
+      {/* renders teams from the filterTeams state if it is not empty */}
       {filterTeams ? 
         filterTeams.map((team, id) => (
           <TeamCard team={team} key={id}/>
