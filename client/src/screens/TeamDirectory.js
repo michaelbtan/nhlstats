@@ -29,13 +29,19 @@ export default function TeamDirectory() {
     if (e === "Alpha-Ascending" && filterTeams) {
       setFilterTeams(sortAZ(filterTeams));
       setApplySort(!applySort);
-    } setTeams(sortAZ(teams));
+    }
+    if (e === "Alpha-Ascending" && teams) {
+      setTeams(sortAZ(teams));
       setApplySort(!applySort);
+    }
     if (e === "Alpha-Descending" && filterTeams) {
       setFilterTeams(sortZA(filterTeams));
       setApplySort(!applySort);
-    } setTeams(sortZA(teams));
+    } 
+    if (e === "Alpha-Descending" && teams) {
+      setTeams(sortZA(teams));
       setApplySort(!applySort);
+    }
   };
 
   //applies to the conference and division filter dropdown
@@ -86,10 +92,7 @@ export default function TeamDirectory() {
         <FilterConference handleFilter={handleFilter} handleSubmit={handleSubmit} />
         <FilterDivision handleFilter={handleFilter} handleSubmit={handleSubmit} />
         {/* sorts alphabetically the filterTeams state if it is not empty */}
-        {filterTeams ?
-          <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
-          : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
-          }
+        <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
       </div>
       <div className="teamListings">
       {/* renders teams from the filterTeams state if it is not empty */}
