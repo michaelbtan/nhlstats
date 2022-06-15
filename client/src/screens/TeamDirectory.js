@@ -6,7 +6,8 @@ import { sortAZ, sortZA } from '../utils/sort';
 import { FilterConference } from '../components/FilterConference';
 import { FilterDivision } from '../components/FilterDivision';
 import { filterEasternConf, filterWesternConf, filterMetroDiv, filterAtlDiv, filterPacDiv, filterCenDiv } from '../utils/filter';
-import { Search } from '../utils/search';
+import { search } from '../utils/search'
+import { SearchTeams } from '../components/SearchTeams';
 
 export default function TeamDirectory() {
 
@@ -14,13 +15,13 @@ export default function TeamDirectory() {
   const [teams, setTeams] = useState([]);
   const [applySort, setApplySort] = useState(true);
   const [filterTeams, setFilterTeams] = useState();
-  const [searchedTeams, setSearchedTeams] = useState();
 
+  //applies to the search component
   const handleSearch = (e) => {
     const res = teams.filter((team) =>
       team.franchise.teamName.toLowerCase().includes(e.toLowerCase())
     );
-    setSearchedTeams(res);
+    setFilterTeams(res);
   };
 
   //applies to the sorting dropdown
@@ -100,7 +101,7 @@ export default function TeamDirectory() {
         <li>Sort teams from A-Z or Z-A</li>
         <li>Filter teams by both division or conference</li>
       </ul>
-      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+      <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
       <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
       <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
       {filterTeams ?

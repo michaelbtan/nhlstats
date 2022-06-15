@@ -1,11 +1,4 @@
-export const Search = (props) => {
-  return (
-    <form onSubmit={(e) => props.onSubmit(e)}>
-      <input
-        onChange={(e) => props.handleSearch(e.target.value)}
-        placeholder="Search"
-        type="text"
-      />
-    </form>
-  );
-};
+export const search = (arr) => {
+  return arr.filter((team) =>
+    team.franchise.teamName.toLowerCase());
+}
