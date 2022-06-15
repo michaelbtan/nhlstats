@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './TeamStats.css';
 import { BackBtn } from '../components/BackBtn';
 import { useParams } from 'react-router-dom';
 import { getTeamStats } from '../services/apiConfig';
@@ -19,6 +20,8 @@ export default function TeamInfo() {
         setTeamStats(team);
         setMock(mockData?.[0].splits?.[0].stat);
         setMock2(mockData?.[1].splits?.[0].stat);
+        console.log('fffff', Object.keys(mock))
+        console.log('fffff', typeof Object.keys(mock))
       }
       getTeamData();
     } catch (error) {
@@ -28,10 +31,36 @@ export default function TeamInfo() {
 
   return (
     <div>
-      <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
-      <h2>{mockData?.[0].splits?.[0].team.name}</h2>
-      <h5>{JSON.stringify(mock)}</h5>
-      <h5>{JSON.stringify(mock2)}</h5>
+      <div className="teamStats_header">
+        <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
+        <h2>{mockData?.[0].splits?.[0].team.name}</h2>
+      </div>
+      <div className="teamStats">
+        <table>
+          <tr>
+            {
+              Object.keys(mock).map((key) => (
+                <th>{key}</th>
+              ))
+            }
+          </tr>
+          <tr>
+            {
+              Object.values(mock).map((key) => (
+                <th>{key}</th>
+              ))
+            }
+          </tr>
+          {/* <tr>
+            {
+              Object.values(mock2).map((key) => (
+                <th>{key}</th>
+              ))
+            }
+          </tr> */}
+        </table>
+        <h5>{JSON.stringify(mock2)}</h5>
+      </div>
       <BackBtn />
     </div>
   )

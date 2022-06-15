@@ -1,0 +1,21 @@
+/* .teamStats_header {
+  display: flex;
+  justify-content: center;
+}; */
+
+.teamStats {
+  overflow-x: scroll;
+};
+
+.above  {
+  background-color: green;
+};
+
+.below  {
+  background-color: red;
+};
+
+.average  {
+  background-color: yellow;
+};
+
