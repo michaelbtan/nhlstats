@@ -7,7 +7,7 @@ export const BackBtn = () => {
 
   return (
     <div>
-     <button onClick={() => navigate(-1)}>Back</button> 
+      <button onClick={() => navigate(-1)}>Back</button> 
     </div>
   )
 }

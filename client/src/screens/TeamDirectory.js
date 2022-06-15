@@ -7,7 +7,6 @@ import { sortAZ, sortZA } from '../utils/sort';
 import { FilterConference } from '../components/FilterConference';
 import { FilterDivision } from '../components/FilterDivision';
 import { filterEasternConf, filterWesternConf, filterMetroDiv, filterAtlDiv, filterPacDiv, filterCenDiv } from '../utils/filter';
-// import { search } from '../utils/search'
 import { SearchTeams } from '../components/SearchTeams';
 
 export default function TeamDirectory() {
@@ -101,18 +100,20 @@ export default function TeamDirectory() {
       <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
       <FilterConference handleConfFilter={handleConfFilter} handleSubmit={handleSubmit} />
       <FilterDivision handleDivFilter={handleDivFilter} handleSubmit={handleSubmit} />
+      {/* sorts alphabetically the filterTeams state if it is not empty */}
       {filterTeams ?
         <SortDropdown handleSort={handleFilteredSort} handleSubmit={handleSubmit} />
         : <SortDropdown handleSort={handleSort} handleSubmit={handleSubmit} />
         }
       </div>
       <div className="teamListings">
+      {/* renders teams from the filterTeams state if it is not empy */}
       {filterTeams ? 
         filterTeams.map((team, id) => (
-          <TeamCard team={team} id={id}/>
+          <TeamCard team={team} key={id}/>
         ))
         : teams.map((team, id) => (
-          <TeamCard team={team} id={id}/>
+          <TeamCard team={team} key={id}/>
         ))
       }
       </div>
