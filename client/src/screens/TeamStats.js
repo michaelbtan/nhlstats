@@ -49,8 +49,8 @@ export default function TeamInfo() {
           </thead>
           <tbody>          
           <tr>
-            {Object.values(stats).map((key, id ) => (
-                <td key={id}>{key}</td>))}
+            {Object.values(stats).map((value, id ) => (
+                <td key={id}>{value}</td>))}
           </tr>
           <tr>
             {Object.values(rank).map((key, id) => (
@@ -61,7 +61,7 @@ export default function TeamInfo() {
       </div>
       </>
       }
-      <BackBtn />
+      <BackBtn className="backBtn"/>
     </div>
   )
 }
