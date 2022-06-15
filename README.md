@@ -4,18 +4,10 @@ An app that queries NHL teams and team statistics using the statsapi.
 
 ### API Snippet
 
+> GET https://statsapi.web.nhl.com/api/v1/teams/1/stats
+
 ~~~
 {
-  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved.",
-  "stats" : [ {
-    "type" : {
-      "displayName" : "statsSingleSeason",
-      "gameType" : {
-        "id" : "R",
-        "description" : "Regular season",
-        "postseason" : false
-      }
-    },
     "splits" : [ {
       "stat" : {
         "gamesPlayed" : 82,
@@ -46,58 +38,11 @@ An app that queries NHL teams and team statistics using the statsapi.
         "faceOffWinPercentage" : "48.1",
         "shootingPctg" : 10.5,
         "savePctg" : 0.919
-      },
-      "team" : {
-        "id" : 3,
-        "name" : "New York Rangers",
-        "link" : "/api/v1/teams/3"
       }
-    } ]
-  }, {
-    "type" : {
-      "displayName" : "regularSeasonStatRankings",
-      "gameType" : null
-    },
-    "splits" : [ {
-      "stat" : {
-        "wins" : "6th",
-        "losses" : "9th",
-        "ot" : "28th",
-        "pts" : "8th",
-        "ptPctg" : "8th",
-        "goalsPerGame" : "16th",
-        "goalsAgainstPerGame" : "2nd",
-        "evGGARatio" : "14th",
-        "powerPlayPercentage" : "4th",
-        "powerPlayGoals" : "9th",
-        "powerPlayGoalsAgainst" : "6th",
-        "powerPlayOpportunities" : "28th",
-        "penaltyKillOpportunities" : "14th",
-        "penaltyKillPercentage" : "7th",
-        "shotsPerGame" : "28th",
-        "shotsAllowed" : "11th",
-        "winScoreFirst" : "9th",
-        "winOppScoreFirst" : "6th",
-        "winLeadFirstPer" : "6th",
-        "winLeadSecondPer" : "12th",
-        "winOutshootOpp" : "10th",
-        "winOutshotByOpp" : "10th",
-        "faceOffsTaken" : "32nd",
-        "faceOffsWon" : "31st",
-        "faceOffsLost" : "8th",
-        "faceOffWinPercentage" : "24th",
-        "savePctRank" : "1st",
-        "shootingPctRank" : "8th"
-      },
-      "team" : {
-        "id" : 3,
-        "name" : "New York Rangers",
-        "link" : "/api/v1/teams/3"
-      }
-    } ]
-  } ]
-}
 ~~~
+
+> GET https://statsapi.web.nhl.com/api/v1/teams
+
 ~~~
 {
             "id": 1,
@@ -141,6 +86,19 @@ An app that queries NHL teams and team statistics using the statsapi.
         },
 ~~~
 
+### Component Heirchy
+
+![Component Heirchy for NFL App](https://i.imgur.com/6Fps0bP.png)
+
+
+
+
 ### Features
-Search for teams using the search bar
-Filter teams by conference or division
+1. Search for teams using the search bar
+2. Filter teams by conference or division
+3. Sort teams alphabetically
+4. See team's stat rankings amongst broader league
+
+### Acknowledgements
+StatsAPI<br><br>
+"NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2022. All Rights Reserved."
