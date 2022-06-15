@@ -45,6 +45,10 @@ export default function TeamInfo() {
         <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
         <h2>{teamStats?.[0].splits?.[0].team.name}</h2>
         <h3>2021-2022 Stats</h3>
+          <h4><span id="rankSpan" className="aboveAvg">Top 10</span>
+            <span id="rankSpan" className="average">Middle</span>
+            <span id="rankSpan" className="belowAvg">Bottom 10</span>
+          </h4>
         <BackBtn />
       </div>
       <div className="teamStats">

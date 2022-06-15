@@ -31,3 +31,7 @@ th  {
 .average  {
   background-color: yellow;
 }
+
+#rankSpan {
+  padding: 0.5%;
+}
