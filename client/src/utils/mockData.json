@@ -1,0 +1,96 @@
+[
+  {
+    "type": {
+      "displayName": "statsSingleSeason",
+      "gameType": {
+        "id": "R",
+        "description": "Regular season",
+        "postseason": false
+      }
+    },
+    "splits": [
+      {
+        "stat": {
+          "gamesPlayed": 82,
+          "wins": 25,
+          "losses": 46,
+          "ot": 11,
+          "pts": 61,
+          "ptPctg": "37.2",
+          "goalsPerGame": 2.561,
+          "goalsAgainstPerGame": 3.585,
+          "evGGARatio": 0.8377,
+          "powerPlayPercentage": "12.6",
+          "powerPlayGoals": 30,
+          "powerPlayGoalsAgainst": 57,
+          "powerPlayOpportunities": 239,
+          "penaltyKillPercentage": "75.7",
+          "shotsPerGame": 30.9634,
+          "shotsAllowed": 33.9634,
+          "winScoreFirst": 0.541,
+          "winOppScoreFirst": 0.111,
+          "winLeadFirstPer": 0.6,
+          "winLeadSecondPer": 0.778,
+          "winOutshootOpp": 0.333,
+          "winOutshotByOpp": 0.255,
+          "faceOffsTaken": 4695,
+          "faceOffsWon": 2448,
+          "faceOffsLost": 2247,
+          "faceOffWinPercentage": "52.1",
+          "shootingPctg": 8.3,
+          "savePctg": 0.894
+        },
+        "team": {
+          "id": 4,
+          "name": "Philadelphia Flyers",
+          "link": "/api/v1/teams/4"
+        }
+      }
+    ]
+  },
+  {
+    "type": {
+      "displayName": "regularSeasonStatRankings",
+      "gameType": null
+    },
+    "splits": [
+      {
+        "stat": {
+          "wins": "30th",
+          "losses": "29th",
+          "ot": "12th",
+          "pts": "29th",
+          "ptPctg": "29th",
+          "goalsPerGame": "31st",
+          "goalsAgainstPerGame": "27th",
+          "evGGARatio": "22nd",
+          "powerPlayPercentage": "32nd",
+          "powerPlayGoals": "31st",
+          "powerPlayGoalsAgainst": "25th",
+          "powerPlayOpportunities": "16th",
+          "penaltyKillOpportunities": "19th",
+          "penaltyKillPercentage": "26th",
+          "shotsPerGame": "16th",
+          "shotsAllowed": "29th",
+          "winScoreFirst": "28th",
+          "winOppScoreFirst": "32nd",
+          "winLeadFirstPer": "29th",
+          "winLeadSecondPer": "27th",
+          "winOutshootOpp": "30th",
+          "winOutshotByOpp": "30th",
+          "faceOffsTaken": "15th",
+          "faceOffsWon": "6th",
+          "faceOffsLost": "12th",
+          "faceOffWinPercentage": "6th",
+          "savePctRank": "25th",
+          "shootingPctRank": "31st"
+        },
+        "team": {
+          "id": 4,
+          "name": "Philadelphia Flyers",
+          "link": "/api/v1/teams/4"
+        }
+      }
+    ]
+  }
+]

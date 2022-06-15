@@ -8,10 +8,10 @@ export const SortDropdown = (props) => {
     <form onSubmit={props.handleSubmit}>
       <select onChange={(e) => handleSort(e)}>
         <option selected disabled>
-          Sort By:
+          Sort Alphabetically
         </option>
-        <option value="alpha-ascending">Alphabetically A-Z</option>
-        <option value="alpha-descending">Alphabetically Z-A</option>
+        <option value="Alpha-Ascending">Alphabetically A-Z</option>
+        <option value="Alpha-Descending">Alphabetically Z-A</option>
       </select>
     </form>
   );

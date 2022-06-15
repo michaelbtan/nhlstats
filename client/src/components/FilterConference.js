@@ -7,7 +7,7 @@ export const FilterConference = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <select onChange={(e) => handleConfFilter(e)}>
-        <option value="Select">Select Conference:</option>
+        <option value="Select">Select Conference</option>
         <option value="Eastern-Conference">Eastern Conference</option>
         <option value="Western-Conference">Western Conference</option>
       </select>

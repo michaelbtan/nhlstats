@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './TeamCard.css'
 
 export default function TeamCard({ team, id }) {
   return (
-    <div id={id}>
+    <div className="teamCard" id={id}>
       <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
       <h2>{team.franchise.teamName}</h2>
       {/* checks if the venue city and location name is the same */}
