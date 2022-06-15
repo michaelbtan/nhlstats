@@ -12,6 +12,10 @@ th, td  {
   padding: 10px;
 }
 
+th  {
+  background-color: #D3D3D3;
+}
+
 .teamStats {
   overflow-x: scroll;
 }
@@ -22,8 +26,4 @@ th, td  {
 
 .below  {
   background-color: red;
-}
-
-.average  {
-  background-color: yellow;
 }
