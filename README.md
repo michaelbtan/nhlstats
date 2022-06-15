@@ -2,7 +2,7 @@
 An app that queries NHL teams and team statistics using the statsapi. 
 
 
-### API Snippet
+### API and Data Samples
 
 > GET https://statsapi.web.nhl.com/api/v1/teams/1/stats
 
@@ -89,8 +89,6 @@ An app that queries NHL teams and team statistics using the statsapi.
 ### Component Heirchy
 
 ![Component Heirchy for NFL App](https://i.imgur.com/6Fps0bP.png)
-
-
 
 
 ### Features
