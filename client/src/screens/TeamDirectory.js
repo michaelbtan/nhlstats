@@ -78,7 +78,7 @@ export default function TeamDirectory() {
 
   return (
     <div>
-      <h2>Welcome to the NHL Team Data App!</h2>
+      <h1>Welcome to the NHL Team Data App!</h1>
       <div className="filters">
       <SearchTeams onSubmit={handleSubmit} handleSearch={handleSearch} />
       <FilterConference handleFilter={handleFilter} handleSubmit={handleSubmit} />

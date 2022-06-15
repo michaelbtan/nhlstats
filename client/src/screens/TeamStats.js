@@ -3,15 +3,15 @@ import './TeamStats.css';
 import { BackBtn } from '../components/BackBtn';
 import { useParams } from 'react-router-dom';
 import { getTeamStats } from '../services/apiConfig';
-import mockData from '../utils/mockData'; 
+// import mockData from '../utils/mockData'; 
 
 
 export default function TeamInfo() {
 
   const [teamStats, setTeamStats] = useState({});
   const { id } = useParams(); //id of the team that is selected
-  const [mock, setMock] = useState({})
-  const [mock2, setMock2] = useState({})
+  const [stats, setStats] = useState({})
+  const [rank, setRank] = useState({})
   const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function TeamInfo() {
       const getTeamData = async () => {
         const team = await getTeamStats(id);
         setTeamStats(team);
-        setMock(teamStats?.[0].splits?.[0].stat);
-        setMock2(teamStats?.[1].splits?.[0].stat);
+        setStats(teamStats?.[0].splits?.[0].stat);
+        setRank(teamStats?.[1].splits?.[0].stat);
         setIsFetching(false);
       }
       getTeamData();
@@ -37,22 +37,23 @@ export default function TeamInfo() {
       <div className="teamStats_header">
         <img src="https://i.imgur.com/0mllQct.png" width="100px" alt="NHL logo"/>
         <h2>{teamStats?.[0].splits?.[0].team.name}</h2>
+        <h3>2021-2022 Stats</h3>
       </div>
       <div className="teamStats">
         <table>
           <thead>
           <tr>
-            {Object.keys(mock).map((key, id) => (
+            {Object.keys(stats).map((key, id) => (
                 <th key={id}>{key}</th>))}
           </tr>
           </thead>
           <tbody>          
           <tr>
-            {Object.values(mock).map((key, id ) => (
+            {Object.values(stats).map((key, id ) => (
                 <td key={id}>{key}</td>))}
           </tr>
           <tr>
-            {Object.values(mock2).map((key, id) => (
+            {Object.values(rank).map((key, id) => (
                 <td key={id}>{parseInt(key.slice(0, -2))}</td>))}
           </tr>
           </tbody>
