@@ -1,6 +1,8 @@
 # NHL stats
 An app that queries NHL teams and team statistics using the statsapi. 
 
+https://taupe-valkyrie-484f5c.netlify.app/
+
 ### Dependencies
 ~~~
   "dependencies": {
