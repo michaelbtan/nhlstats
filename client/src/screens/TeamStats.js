@@ -56,23 +56,7 @@ export default function TeamInfo() {
         <table>
           <thead>
             <tr>
-              {/* stats header*/}
-              {Object.keys(stats).map((key, id) => (
-                  <th key={id}>{key}</th>))}
-            </tr>
-          </thead>
-          <tbody>          
-            <tr>
-              {/* stats */}
-              {Object.values(stats).map((value, id ) => (
-                <td key={id}>{value}</td>))}
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              {/* ranking header*/}
+              {/* ranking table header*/}
               {Object.keys(rank).map((key, id) => (
                   <th key={id}>{key}</th>))}
             </tr>
@@ -88,6 +72,22 @@ export default function TeamInfo() {
                 }
                 >{key}</td>))
               }
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              {/* stats table header*/}
+              {Object.keys(stats).map((key, id) => (
+                  <th key={id}>{key}</th>))}
+            </tr>
+          </thead>
+          <tbody>          
+            <tr>
+              {/* mapping stats from the stats state*/}
+              {Object.values(stats).map((value, id ) => (
+                <td key={id}>{value}</td>))}
             </tr>
           </tbody>
         </table>
