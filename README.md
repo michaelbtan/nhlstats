@@ -1,6 +1,31 @@
 # NHL stats
 An app that queries NHL teams and team statistics using the statsapi. 
 
+### Dependencies
+~~~
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+~~~
+
+### Component Hierarchy
+
+![Component Heirchy for NFL App](https://i.imgur.com/6Fps0bP.png)
+
+
+### Features
+1. Search for teams using the search bar
+2. Filter teams by conference or division
+3. Sort teams alphabetically
+4. See team's stat rankings amongst broader league
 
 ### API and Data Samples
 
@@ -85,17 +110,6 @@ An app that queries NHL teams and team statistics using the statsapi.
             "active": true
         },
 ~~~
-
-### Component Heirchy
-
-![Component Heirchy for NFL App](https://i.imgur.com/6Fps0bP.png)
-
-
-### Features
-1. Search for teams using the search bar
-2. Filter teams by conference or division
-3. Sort teams alphabetically
-4. See team's stat rankings amongst broader league
 
 ### Acknowledgements
 StatsAPI<br><br>
